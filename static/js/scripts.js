@@ -48,6 +48,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
     // Marked
+    /*
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
         fetch(content_dir + name + '.md')
@@ -61,5 +62,5 @@ window.addEventListener('DOMContentLoaded', event => {
             })
             .catch(error => console.log(error));
     })
-
+    */
 }); 
