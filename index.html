@@ -27,6 +27,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link type="text/css" href="static/css/styles.css" rel="stylesheet" />
     <link type="text/css" href="static/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="static/css/stylesheet.css">
 
     <!-- Bootstrap core JS-->
     <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
@@ -142,14 +143,95 @@
         </div>
     </section>
     <!-- Home -->
-
+    <div style="width: 100%; background-color: #FF474C; opacity: 0.9;">
+        <h1 id="publications-subtitle" class="container px-5" style="padding: 30px 0px; line-height: 4rem; font-size: 2.6rem;">Experiences</h1>
+    </div>
     <!-- Publications -->
     <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
         <div class="container px-5">
             <header>
-                <h2 id="publications-subtitle"><i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS</h2>
+                <h2 id="publications-subtitle">Computer Vision</h2>
             </header>
-            <div class="main-body" id="publications-md"></div>
+            <div>
+                <h3>Trailer assistant</h3>
+                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
+                    <div class="one_trailer_video" >
+                      <div class="two_trailer_video" id='trailer_image'>
+                        <video  width=100% muted autoplay loop>
+                          <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <img src='static/assets/img/trailer_chain.png' id='trailer_before' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function trailer_start() {
+                        document.getElementById('trailer_image').style.opacity = "1";
+                      }
+                    
+                      function trailer_stop() {
+                        document.getElementById('trailer_image').style.opacity = "0";
+                      }
+                      trailer_stop()
+                    </script>
+                </div>
+                <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
+                </p>
+            </div>
+            
+            <div>
+                <h3>vSLAM visualization</h3>
+                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
+                    <div class="one_trailer_video" >
+                      <div class="two_trailer_video" id='trailer_image'>
+                        <video  width=100% muted autoplay loop>
+                          <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <img src='static/assets/img/trailer_chain.png' id='trailer_before' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function trailer_start() {
+                        document.getElementById('trailer_image').style.opacity = "1";
+                      }
+                    
+                      function trailer_stop() {
+                        document.getElementById('trailer_image').style.opacity = "0";
+                      }
+                      trailer_stop()
+                    </script>
+                </div>
+                <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
+                </p>
+            </div>
+            
+            <div>
+                <h3>Online semantic segmentation</h3>
+                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
+                    <div class="one_trailer_video" >
+                      <div class="two_trailer_video" id='trailer_image'>
+                        <video  width=100% muted autoplay loop>
+                          <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <img src='static/assets/img/trailer_chain.png' id='trailer_before' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function trailer_start() {
+                        document.getElementById('trailer_image').style.opacity = "1";
+                      }
+                    
+                      function trailer_stop() {
+                        document.getElementById('trailer_image').style.opacity = "0";
+                      }
+                      trailer_stop()
+                    </script>
+                </div>
+                <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
+                </p>
+            </div>
 
         </div>
     </section>
@@ -159,7 +241,59 @@
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
         <div class="container px-5">
             <header>
-                <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i>AWARDS </h2>
+                <h2 id="awards-subtitle">Natural language Processing </h2>
+            </header>
+            
+            <div>
+                <h3>Language Evolution</h3>
+                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
+                    <div class="one_trailer_video" >
+                      <div class="two_trailer_video" id='trailer_image'>
+                        <video  width=100% muted autoplay loop>
+                          <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <img src='static/assets/img/trailer_chain.png' id='trailer_before' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function trailer_start() {
+                        document.getElementById('trailer_image').style.opacity = "1";
+                      }
+                    
+                      function trailer_stop() {
+                        document.getElementById('trailer_image').style.opacity = "0";
+                      }
+                      trailer_stop()
+                    </script>
+                </div>
+                <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!-- Awards -->
+    
+    <!-- Awards -->
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+        <div class="container px-5">
+            <header>
+                <h2 id="awards-subtitle">Programming </h2>
+            </header>
+            <h3>GPU cuda - deeplearning api</h3>
+            <h3>C/C++</h3>
+            <h3>python</h3>
+
+        </div>
+    </section>
+    <!-- Awards -->
+    
+    <!-- Awards -->
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+        <div class="container px-5">
+            <header>
+                <h2 id="awards-subtitle">Natural language Processing </h2>
             </header>
             <div class="main-body" id="awards-md"></div>
 
