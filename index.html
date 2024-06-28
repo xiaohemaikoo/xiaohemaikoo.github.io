@@ -142,10 +142,49 @@
 			</div>
         </div>
     </section>
-    <!-- Home -->
+    <!-- 
     <div style="width: 100%; background-color: #FF474C; opacity: 0.9;">
         <h1 id="publications-subtitle" class="container px-5" style="padding: 30px 0px; line-height: 4rem; font-size: 2.6rem;">Experiences</h1>
     </div>
+    -->
+    <div style="width: 100%; height: 100px; background-color: #FF474C; opacity: 0.9;">
+        
+    </div>
+    
+    <!-- Awards -->
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+        <div class="container px-5">
+            <header>
+                <h2 id="awards-subtitle">Experiences </h2>
+            </header>
+            
+            <h3 style="position: relative;  margin-top: 30px;" >Education</h3>
+            <div style="height: 100px; position: relative;  margin-top: 30px;" >
+                <img src='static/assets/img/HeidelbergUniversity.png' height=100% >
+            </div>
+            
+            <h3 style="position: relative;  margin-top: 30px;" >Work Experience</h3>
+            <div style="height: 100px; position: relative;  margin-top: 30px;" >
+                <img src='static/assets/img/huawei.png' height=100% >
+                <img src='static/assets/img/hyundai.png' height=100% style=" position: relative;  margin-left: 80px;" >
+            </div>
+            
+            <h3 style="position: relative;  margin-top: 30px;" >Internship & Mini Job</h3>
+            <div style="height: 100px; position: relative;  margin-top: 30px;" >
+                <img src='static/assets/img/hits.png' height=100% >
+                <img src='static/assets/img/iwrssc.png' height=100% style=" position: relative;  margin-left: 80px;" >
+                <img src='static/assets/img/py4dgeo_logo.png' height=60% style=" position: relative;  margin-left: 80px;" >
+                <img src='static/assets/img/qianxin.png' height=80% style=" position: relative;  margin-left: 80px;" >
+            </div>
+
+        </div>
+    </section>
+    <!-- Awards -->
+    
+    <div style="width: 100%; height: 100px; background-color: var(--h-title-color); opacity: 0.9;">
+        
+    </div>
+    
     <!-- Publications -->
     <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
         <div class="container px-5">
@@ -181,25 +220,13 @@
             
             <div>
                 <h3>vSLAM visualization</h3>
-                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
-                    <div class="one_trailer_video" >
-                      <div class="two_trailer_video" id='trailer_image'>
-                        <video  width=100% muted autoplay loop>
-                          <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
-                        </video>
-                      </div>
-                      <img src='static/assets/img/trailer_chain.png' id='trailer_before' width=100% >
+                <div class="main-body" id="publications-md">
+                    <div style="width: 1300px; position: relative;" >
+                      <img src='static/assets/img/vslam1.png' width=100% >
                     </div>
-                    <script type="text/javascript">
-                      function trailer_start() {
-                        document.getElementById('trailer_image').style.opacity = "1";
-                      }
-                    
-                      function trailer_stop() {
-                        document.getElementById('trailer_image').style.opacity = "0";
-                      }
-                      trailer_stop()
-                    </script>
+                    <div style="width: 1300px; position: relative; margin-top: 10px;" >
+                      <img src='static/assets/img/vslam2.png' width=100% >
+                    </div>
                 </div>
                 <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
                   Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
@@ -208,25 +235,13 @@
             
             <div>
                 <h3>Online semantic segmentation</h3>
-                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
-                    <div class="one_trailer_video" >
-                      <div class="two_trailer_video" id='trailer_image'>
-                        <video  width=100% muted autoplay loop>
-                          <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
-                        </video>
-                      </div>
-                      <img src='static/assets/img/trailer_chain.png' id='trailer_before' width=100% >
+                <div class="main-body" id="publications-md">
+                    <div style="width: 1300px; position: relative;  margin-top: 10px;" >
+                      <img src='static/assets/img/segany1.png' width=100% >
                     </div>
-                    <script type="text/javascript">
-                      function trailer_start() {
-                        document.getElementById('trailer_image').style.opacity = "1";
-                      }
-                    
-                      function trailer_stop() {
-                        document.getElementById('trailer_image').style.opacity = "0";
-                      }
-                      trailer_stop()
-                    </script>
+                    <div style="width: 1300px; position: relative; margin-top: 10px;" >
+                      <img src='static/assets/img/segany2.png' width=100% >
+                    </div>
                 </div>
                 <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
                   Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
@@ -246,25 +261,29 @@
             
             <div>
                 <h3>Language Evolution</h3>
-                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
-                    <div class="one_trailer_video" >
-                      <div class="two_trailer_video" id='trailer_image'>
-                        <video  width=100% muted autoplay loop>
-                          <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
-                        </video>
-                      </div>
-                      <img src='static/assets/img/trailer_chain.png' id='trailer_before' width=100% >
+                <div class="main-body" id="publications-md">
+                    <div style="width: 1300px; position: relative;  margin-top: 10px;" >
+                      <img src='static/assets/img/sctree.png' width=45% >
+                      <img src='static/assets/img/semanticchange.png' width=45% style=" position: relative;  margin-left: 10px;" >
                     </div>
-                    <script type="text/javascript">
-                      function trailer_start() {
-                        document.getElementById('trailer_image').style.opacity = "1";
-                      }
-                    
-                      function trailer_stop() {
-                        document.getElementById('trailer_image').style.opacity = "0";
-                      }
-                      trailer_stop()
-                    </script>
+                    <div style="width: 600px; position: relative;  margin-top: 10px;" >
+                      
+                    </div>
+                    <div style="width: 1000px; position: relative;  margin-top: 10px;" >
+                      <img src='static/assets/img/sc-crosslingual.png' width=100% >
+                    </div>
+                </div>
+                <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
+                </p>
+            </div>
+            
+            <div>
+                <h3>Novel word senses detection</h3>
+                <div class="main-body" id="publications-md">
+                    <div style="width: 800px; position: relative;  margin-top: 10px;" >
+                      <img src='static/assets/img/novelsensedetection.png' width=100% >
+                    </div>
                 </div>
                 <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
                   Train the neural network of optical flow, scene flow for scene perception, estimating dense and long-range motion from a video sequence.
@@ -276,7 +295,7 @@
     <!-- Awards -->
     
     <!-- Awards -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="awards">
         <div class="container px-5">
             <header>
                 <h2 id="awards-subtitle">Programming </h2>
@@ -293,10 +312,29 @@
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
         <div class="container px-5">
             <header>
-                <h2 id="awards-subtitle">Natural language Processing </h2>
+                <h2 id="awards-subtitle">Other Skills </h2>
             </header>
-            <div class="main-body" id="awards-md"></div>
+            <!-- basic knowledge and experiences of ... (next) -->
+            <h3>Computer Vision</h3>
+            <h3>NLP</h3>
+            <h3>Deep Learning</h3>
+            <h3>Others</h3>
+        </div>
+    </section>
+    <!-- Awards -->
+    
+    <!-- Awards -->
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+        <div class="container px-5">
+            <header>
+                <h2 id="awards-subtitle">Publications </h2>
+            </header>
+            
+            <p> Ma, Xianghe, Dominik Schlechtweg, and Wei Zhao. "Presence or Absence: Are Unknown Word Usages in Dictionaries?." arXiv preprint arXiv:2406.00656 (2024). </p>
+            
+            <p> Ma, Xianghe, Michael Strube, and Wei Zhao. "Graph-based Clustering for Detecting Semantic Change Across Time and Languages." Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers). 2024. </p>
 
+            <p> Dumitrescu, D., Ulusoy, I. S., Andriushchenko, P., Daskalakis, G., Kempf, D., & Ma, X. (2023). AMMICO, an AI Media and Misinformation Content Analysis Tool. SocArXiv. October, 13. </p>
         </div>
     </section>
     <!-- Awards -->
