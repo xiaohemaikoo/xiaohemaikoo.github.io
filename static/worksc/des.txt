@@ -1,0 +1,12 @@
+
+
+
+•             Supporting the development of the 'Oracle' scientific visualization platform for autonomous driving
+•             Facilitating 2D and 3D visualization and automating offline annotation generation for object detection, free space detection, segmentation, key point matching, depth estimation, optical flow, lidar point cloud, and SLAM data
+•             Integrating the Meta AI Segment Anything framework into 'Oracle' for real-time online image semantic segmentation
+•             Training neural networks for scene perception, including optical flow and scene flow estimation, as well as dense and long-range motion detection from video sequences
+•             Optimizing backend logic and frontend real-time rendering for fast and efficient visualization of autonomous driving data within the 'Oracle' platform
+
+
+
+
