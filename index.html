@@ -170,20 +170,22 @@
             <h3 style="position: relative;  margin-top: 30px;" >Education</h3>
             <div style="height: 100px; position: relative;  margin-top: 30px;" >
                 <img src='static/assets/img/HeidelbergUniversity.png' height=100% >
+                <img src='static/assets/img/sdkd.png' height=100% style=" position: relative;  margin-left: 80px;">
             </div>
             
             <h3 style="position: relative;  margin-top: 30px;" >Work Experience</h3>
             <div style="height: 100px; position: relative;  margin-top: 30px;" >
                 <img src='static/assets/img/huawei.png' height=100% >
-                <img src='static/assets/img/hyundai.png' height=100% style=" position: relative;  margin-left: 80px;" >
+                
             </div>
             
             <h3 style="position: relative;  margin-top: 30px;" >Internship & Mini Job</h3>
             <div style="height: 100px; position: relative;  margin-top: 30px;" >
                 <img src='static/assets/img/hits.png' height=100% >
-                <img src='static/assets/img/iwrssc.png' height=100% style=" position: relative;  margin-left: 80px;" >
-                <img src='static/assets/img/py4dgeo_logo.png' height=60% style=" position: relative;  margin-left: 80px;" >
-                <img src='static/assets/img/qianxin.png' height=80% style=" position: relative;  margin-left: 80px;" >
+                <img src='static/assets/img/iwrssc.png' height=100% style=" position: relative;  margin-left: 60px;" >
+                <img src='static/assets/img/py4dgeo_logo.png' height=60% style=" position: relative;  margin-left: 60px;" >
+                <img src='static/assets/img/qianxin.png' height=80% style=" position: relative;  margin-left: 60px;" >
+                <img src='static/assets/img/hyundai.png' height=100% style=" position: relative;  margin-left: 60px;" >
             </div>
 
         </div>
@@ -200,10 +202,62 @@
             <header>
                 <h2 id="publications-subtitle">Computer Vision</h2>
             </header>
+            
+            <div>
+                <h3 style="padding: 15px 0px;" >Scientific Visualization and Scene Perception</h3>
+                <div class="main-body" id="publications-md" onmouseout="oracle_showcase_stop()" onmouseover="oracle_showcase_start()"  onclick="oracle_showcase_click()">
+                    <div class="one_trailer_video" style="width: 500px; position: relative;"  id='oracle_showcase_wrapper' >
+                      <div class="two_trailer_video" id='oracle_showcase_image'>
+                        <video width=100% muted autoplay loop controls>
+                          <source src="static/assets/img/oracle_showcase.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <img src='static/assets/img/oracle_showcase.png' id='trailer_before' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function oracle_showcase_start() {
+                        var w = document.getElementById('oracle_showcase_wrapper').style.width
+                        if (w == "500px") {
+                          document.getElementById('oracle_showcase_image').style.opacity = "1";
+                        }
+                      }
+                    
+                      function oracle_showcase_stop() {
+                        var w = document.getElementById('oracle_showcase_wrapper').style.width
+                        if (w == "500px") {
+                          document.getElementById('oracle_showcase_image').style.opacity = "0";
+                        }
+                      }
+                      oracle_showcase_stop()
+                      function oracle_showcase_click() {
+                        var w = document.getElementById('oracle_showcase_wrapper').style.width
+                        if (w == "500px") {
+                          document.getElementById('oracle_showcase_wrapper').style.width = "1300px";
+                          document.getElementById('oracle_showcase_image').style.opacity = "1";
+                        } else {
+                          document.getElementById('oracle_showcase_wrapper').style.width = "500px";
+                        } 
+                      }
+                    </script>
+                </div>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Video: Scientific Visualization and Scene Perception </p>
+                <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Implement image segmentation using the Segment Anything framework, achieving real-time segmentation on the frontend.
+                </p>
+                <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Train the neural network for scene perception and offline annotation, such as object detection, segmentation, depth, key points detection, optical flow, scene flow, and dense and long-range motion from a video sequence. 
+                </p>
+                <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Develop visualization and annotation web tools for scene perception, implement 2D and 3D web viewers to visualize and interact with the raw sensor data and annotations, such as multi-camera images, Lidar point clouds, GPS trajectory, key points, objects, free space, segmentation masks, vSLAM key points and trajectory.
+                </p>
+                <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Optimize backend logic and frontend realtime rendering.
+                </p>
+            </div>
             <div>
                 <h3 style="padding: 15px 0px;" >Trailer assistant</h3>
-                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()">
-                    <div class="one_trailer_video" >
+                <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()"  onclick="trailer_click()">
+                    <div class="one_trailer_video" id='trailer_image_wrapper'>
                       <div class="two_trailer_video" id='trailer_image'>
                         <video  width=100% muted autoplay loop>
                           <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
@@ -220,9 +274,20 @@
                         document.getElementById('trailer_image').style.opacity = "0";
                       }
                       trailer_stop()
+                      function trailer_click() {
+                        console.log("xiaohaima")
+                        var w = document.getElementById('trailer_image_wrapper').style.width
+                        console.log("xiaohaima wr= ", w = document.getElementById('trailer_image_wrapper'))
+                        console.log("xiaohaima w= ", w = document.getElementById('trailer_image_wrapper').style.width)
+                        if (w == "500px") {
+                          document.getElementById('trailer_image_wrapper').style.width = "1300px";
+                        } else {
+                          document.getElementById('trailer_image_wrapper').style.width = "500px";
+                        } 
+                      }
                     </script>
                 </div>
-                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Tracking keypoints of moving trailers. </p>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Video: Tracking keypoints of moving trailers. </p>
                 <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
                   Train the neural network for scene perception with a focus on 3D vision scenarios, estimating optical flow, scene flow, and dense and long-range motion from a video sequence.
                   
@@ -232,18 +297,43 @@
             
             <div>
                 <h3 style="padding: 15px 0px;">vSLAM visualization</h3>
-                <div class="main-body" id="publications-md">
-                    <div style="width: 1300px; position: relative;" >
+                <!--
+                <div class="main-body" id="publications-md" onclick="vslam1_click()">
+                    <div style="width: 500px; position: relative;" id='vslam1_wrapper'>
                       <img src='static/assets/img/vslam1.png' width=100% >
                     </div>
+                    <script type="text/javascript">
+                      function vslam1_click() {
+                        var element = document.getElementById('vslam1_wrapper')
+                        var w = element.style.width
+                        if (w == "500px") {
+                          element.style.width = "1300px";
+                        } else {
+                          element.style.width = "500px";
+                        } 
+                      }
+                    </script>
                 </div>
-                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> SLAM DATA visualization. </p>
-                <div class="main-body" id="publications-md">
-                    <div style="width: 1300px; position: relative; margin-top: 10px;" >
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Figure: SLAM DATA visualization. </p>
+                -->
+                
+                <div class="main-body" id="publications-md" onclick="vslam2_click()">
+                    <div style="width: 500px; position: relative; margin-top: 10px;" id='vslam2_wrapper'>
                       <img src='static/assets/img/vslam2.png' width=100% >
                     </div>
+                    <script type="text/javascript">
+                      function vslam2_click() {
+                        var element = document.getElementById('vslam2_wrapper')
+                        var w = element.style.width
+                        if (w == "500px") {
+                          element.style.width = "1300px";
+                        } else {
+                          element.style.width = "500px";
+                        } 
+                      }
+                    </script>
                 </div>
-                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> SLAM 3D Viewer Functions. </p>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Figure: SLAM 3D Viewer Functions. </p>
                 <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
                   Develop 3D vSLAM scientific visualization tools. Render multi-sensor fusion point cloud of the Map, driving trajectory, driving trajectory of vSLAM localization, 
                   and sensors trajectory. Perform 2D to 3D key point matching, projection, and rendering.
@@ -252,20 +342,42 @@
             
             <div>
                 <h3 style="padding: 15px 0px;">Online semantic segmentation</h3>
-                <div class="main-body" id="publications-md">
-                    <div style="width: 1300px; position: relative;  margin-top: 10px;" >
+                <div class="main-body" id="publications-md" onclick="segany1_click()">
+                    <div style="width: 500px; position: relative;  margin-top: 10px;" id='segany1_wrapper'>
                       <img src='static/assets/img/segany1.png' width=100% >
                     </div>
+                    <script type="text/javascript">
+                      function segany1_click() {
+                        var element = document.getElementById('segany1_wrapper')
+                        var w = element.style.width
+                        if (w == "500px") {
+                          element.style.width = "1300px";
+                        } else {
+                          element.style.width = "500px";
+                        } 
+                      }
+                    </script>
                 </div>
-                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Online semantic segmentation. </p>
-                <div class="main-body" id="publications-md">
-                    <div style="width: 1300px; position: relative; margin-top: 10px;" >
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Figure: Online semantic segmentation. </p>
+                <div class="main-body" id="publications-md" onclick="segany2_click()">
+                    <div style="width: 500px; position: relative; margin-top: 10px;" id='segany2_wrapper'>
                       <img src='static/assets/img/segany2.png' width=100% >
                     </div>
+                    <script type="text/javascript">
+                      function segany2_click() {
+                        var element = document.getElementById('segany2_wrapper')
+                        var w = element.style.width
+                        if (w == "500px") {
+                          element.style.width = "1300px";
+                        } else {
+                          element.style.width = "500px";
+                        } 
+                      }
+                    </script>
                 </div>
-                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Online semantic segmentation annotation. </p>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> Figure: Online semantic segmentation annotation. </p>
                 <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
-                  Implement real-time online image semantic segmentation based on Meta AI segment anything framework.
+                  Implement real-time online image semantic segmentation and annotation based on Meta AI segment anything framework.
                 </p>
             </div>
 
@@ -302,11 +414,28 @@
                   Representation of the semantic changes for ‘mouse’ in our temporal dynamic graph. Blue nodes indicate the acquisition of a new meaning over time, while black nodes indicate unchanged word meanings.
                 </p>
                 -->
-                <div class="main-body" id="publications-md">
-                    <div style="width: 1000px; position: relative;  margin-top: 10px;" >
+                <div class="main-body" id="publications-md"  onclick="crosslingual_click()">
+                    <div style="width: 300px; position: relative;  margin-top: 10px;" id='crosslingual_wrapper'>
                       <img src='static/assets/img/sc-crosslingual.png' width=100% >
                     </div>
+                    <script type="text/javascript">
+                      function crosslingual_click() {
+                        var element = document.getElementById('crosslingual_wrapper')
+                        var w = element.style.width
+                        if (w == "300px") {
+                          element.style.width = "1000px";
+                        } else {
+                          element.style.width = "300px";
+                        } 
+                      }
+                    </script>
                 </div>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> 
+                  Figure: Representation of the detected semantic changes for the word translations ’mouse’, ’Maus’, and ’mus’ in three temporal dynamic graphs. Blue nodes indicate the acquisition of new meanings,
+                  while orange text additionally marks certain new meanings that are considered highly similar, i.e., undergoing consistent acquisition change. 
+                </p>
+                
+                
                 <!-- 
                 <p style="padding: 30px 0px; line-height: 2rem; font-size: 1.2rem;">
                   Representation of the detected semantic changes for the word translations ’mouse’, ’Maus’, and ’mus’ in three temporal dynamic graphs. Blue nodes indicate the acquisition of new meanings, while orange text additionally marks certain new meanings that are considered highly similar, i.e., undergoing consistent acquisition change.
@@ -330,11 +459,26 @@
             
             <div>
                 <h3 style="padding: 15px 0px;">Novel word senses detection</h3>
-                <div class="main-body" id="publications-md">
-                    <div style="width: 800px; position: relative;  margin-top: 10px;" >
+                <div class="main-body" id="publications-md" onclick="novelsensedetection_click()">
+                    <div style="width: 300px; position: relative;  margin-top: 10px;" id='novelsensedetection_wrapper'>
                       <img src='static/assets/img/novelsensedetection.png' width=100% >
                     </div>
+                    <script type="text/javascript">
+                      function novelsensedetection_click() {
+                        var element = document.getElementById('novelsensedetection_wrapper')
+                        var w = element.style.width
+                        if (w == "300px") {
+                          element.style.width = "800px";
+                        } else {
+                          element.style.width = "300px";
+                        } 
+                      }
+                    </script>
                 </div>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;"> 
+                  Figure: An illustration of the workflow for the two novel word senses detection subtasks. Unknown word usages refer to usages found at a later time period, 
+                  and their mappings with dictionary sense entries are unknown.
+                </p>
                 <!--
                 <p style="padding: 30px 0px 0px 0px; line-height: 2rem; font-size: 1.2rem;">
                   An illustration of the workflow for the two AXOLOTL-24 subtasks. Unknown word usages refer to usages found at a later time period, and their mappings with dictionary sense entries are unknown.
@@ -368,6 +512,123 @@
     <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="awards">
         <div class="container px-5">
             <header>
+                <h2 id="awards-subtitle">Software and Algorithm Design </h2>
+            </header>
+            
+            <div>
+                <h3 style="padding: 15px 0px;">Omnibox of Browser (Search Bar)</h3>
+
+                <div class="main-body" id="publications-md" onclick="omnibox_click()">
+                    <div style="width: 200px; position: relative;  margin-top: 10px;" id='omnibox_wrapper'>
+                      <img src='static/assets/img/omnibox.png' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function omnibox_click() {
+                        var element = document.getElementById('omnibox_wrapper')
+                        var w = element.style.width
+                        if (w == "200px") {
+                          element.style.width = "700px";
+                        } else {
+                          element.style.width = "200px";
+                        } 
+                      }
+                    </script>
+                </div>
+
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;">
+                    Figure: Sequence diagram of functionalities of Omnibox in Browser app.
+                </p>
+                
+                <div class="main-body" id="publications-md" onclick="omnibox_history_url_provider_click()">
+                    <div style="width: 300px; position: relative;  margin-top: 10px;"  id='omnibox_history_url_provider_wrapper'>
+                      <img src='static/assets/img/omnibox_history_url_provider.png' width=100%>
+                    </div>
+                    <script type="text/javascript">
+                      function omnibox_history_url_provider_click() {
+                        var element = document.getElementById('omnibox_history_url_provider_wrapper')
+                        var w = element.style.width
+                        if (w == "300px") {
+                          element.style.width = "1200px";
+                        } else {
+                          element.style.width = "300px";
+                        } 
+                      }
+                    </script>
+                </div>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;">
+                  Figure: Activity diagram of history url provider in Omnibox. 
+                </p>
+                <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Design and upgrade of browser kernel and app features based on the Chromium project, 
+                  one of the most complex large-scale software systems with 32 million lines of code written in C/C++, Java, Python, Android, C#, and web programming languages, utilizing advanced software design patterns.
+                </p>
+
+            </div>
+            
+            <div>
+                <h3 style="padding: 15px 0px;">High Performance Dynamic Network Forwarding</h3>
+                <div class="main-body" id="publications-md" onclick="HPC_forwarding_click()">
+                    <div style="width: 400px; position: relative;  margin-top: 10px;" id="HPC_forwarding_click_wrapper">
+                      <img src='static/assets/img/HPC_forwarding.png' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function HPC_forwarding_click() {
+                        var element = document.getElementById('HPC_forwarding_click_wrapper')
+                        var w = element.style.width
+                        if (w == "400px") {
+                          element.style.width = "1100px";
+                        } else {
+                          element.style.width = "400px";
+                        } 
+                      }
+                    </script>
+                </div>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;">
+                  Figure: Structure of fusion gateway and access route in cloud computing.
+                </p>
+                
+                
+                <div class="main-body" id="publications-md" onclick="HPC_forwarding_alg_click()">
+                    <div style="width: 300px; position: relative;  margin-top: 10px;" id="HPC_forwarding_alg_wrapper">
+                      <img src='static/assets/img/HPC_forwarding_alg.png' width=100% >
+                    </div>
+                    <script type="text/javascript">
+                      function HPC_forwarding_alg_click() {
+                        var element = document.getElementById('HPC_forwarding_alg_wrapper')
+                        var w = element.style.width
+                        if (w == "300px") {
+                          element.style.width = "1000px";
+                        } else {
+                          element.style.width = "300px";
+                        } 
+                      }
+                    </script>
+                </div>
+                <p style="padding: 20px 0px; line-height: 2rem; font-size: 1.2rem; text-align:center;">
+                  Figure: Structure of high performance dynamic network forwarding algorithm.
+                </p>
+
+                
+                <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Design and optimize high performance dynamic network forwarding algorithm to achieve load balancing in Multi-core threads and Multi processes. 
+                  Optimization techniques such as DMA, shared memory, zero-copy transfers, cache alignment, cache miss reduction, inline assembly, CPU affinity, lock-free multi-threads were deployed.
+                </p>
+                
+                <p style="padding: 10px 0px; line-height: 2rem; font-size: 1.2rem;">
+                  Design software crash diagnosis algorithms. Debug network device drivers and Linux kernel.
+                </p>
+
+                
+            </div>
+
+        </div>
+    </section>
+    <!-- Awards -->
+    
+    <!-- Awards -->
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+        <div class="container px-5">
+            <header>
                 <h2 id="awards-subtitle">Programming </h2>
             </header>
             <h3 style="position: relative;  margin-top: 15px;">GPU cuda - deeplearning api optimization</h3>
@@ -383,8 +644,9 @@
     </section>
     <!-- Awards -->
     
+    
     <!-- Awards -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="awards">
         <div class="container px-5">
             <header>
                 <h2 id="awards-subtitle">Other Skills </h2>

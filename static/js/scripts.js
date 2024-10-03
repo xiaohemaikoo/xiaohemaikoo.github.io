@@ -31,6 +31,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
     // Yaml
+    /*
     fetch(content_dir + config_file)
         .then(response => response.text())
         .then(text => {
@@ -45,7 +46,7 @@ window.addEventListener('DOMContentLoaded', event => {
             })
         })
         .catch(error => console.log(error));
-
+    */
 
     // Marked
     /*
