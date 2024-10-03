@@ -257,7 +257,7 @@
             <div>
                 <h3 style="padding: 15px 0px;" >Trailer assistant</h3>
                 <div class="main-body" id="publications-md" onmouseout="trailer_stop()" onmouseover="trailer_start()"  onclick="trailer_click()">
-                    <div class="one_trailer_video" id='trailer_image_wrapper'>
+                    <div class="one_trailer_video" style="width: 500px; position: relative;" id='trailer_image_wrapper'>
                       <div class="two_trailer_video" id='trailer_image'>
                         <video  width=100% muted autoplay loop>
                           <source src="static/assets/img/trailer_chain.mp4" type="video/mp4">
@@ -275,10 +275,7 @@
                       }
                       trailer_stop()
                       function trailer_click() {
-                        console.log("xiaohaima")
                         var w = document.getElementById('trailer_image_wrapper').style.width
-                        console.log("xiaohaima wr= ", w = document.getElementById('trailer_image_wrapper'))
-                        console.log("xiaohaima w= ", w = document.getElementById('trailer_image_wrapper').style.width)
                         if (w == "500px") {
                           document.getElementById('trailer_image_wrapper').style.width = "1300px";
                         } else {
