@@ -69,6 +69,16 @@
             }
         };
     </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var url = window.location.href;
+            var omnibox_index = url.indexOf("omnibox")
+            if (omnibox_index != -1) {
+                var content = document.getElementById('sa_content')
+                content.style.display = "block"
+            }
+        }
+    </script>
     <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -135,7 +145,7 @@
             </header>
             <div class="main-body" id="home-md">
 			    <p>
-				    I am currently working as a computer vision engineer at <a href="https://www.mobis.co.kr/ ">Hyundai Mobis</a> Europe, speicalized in deep learning and scene perception for autonomous driving.
+				    I am currently working as a computer vision engineer at <a href="https://www.mobis.co.kr/ ">Hyundai Mobis</a> Europe, specializing in deep learning and scene perception for autonomous driving.
                     Previously, I was a Natural Language Processing researcher at <a href="https://www.uni-heidelberg.de/">Heidelberg University</a> and <a href="https://www.h-its.org/ ">Heidelberg Institute for Theoretical Study / HITS</a>, 
                     where I focused on the lexical semantic change. 
                     I completed my master's degree in Scientific Computing at <a href="https://www.uni-heidelberg.de/">Heidelberg University</a>. 
@@ -565,6 +575,7 @@
             
             <div style="display:none;" id='sa_content'>
             <div>
+                <a name="omnibox"></a>
                 <h3 style="padding: 15px 0px;">Omnibox of Browser (Search Bar)</h3>
                 
                 <div class="main-body" id="publications-md" onclick="omnibox_chrome_click()">
