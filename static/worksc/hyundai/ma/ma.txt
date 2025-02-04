@@ -1,0 +1,720 @@
+vpn.mobistc.eu
+10.37.38.241
+10.37.38.52
+
+Password-1
+MHX1233214!
+Windows 新密码
+MHX1233214mm!
+
+VPN:
+vpn.mobistc.eu
+
+[20.03 13:46] Dominik Dienlin
+g-mobis-fra.gpcloudservice.com
+[20.03 13:49] Dominik Dienlin
+sc stop PanGPS; sleep 2; sc start PanGPS
+
+Host xianghe
+    HostName 10.37.38.241
+    User xianghe
+	
+	
+novatime 密码 : 7500628 name : Ma, Xianghe
+
+sudo ln -sf /usr/bin/python3.10 /usr/bin/python3
+
+
+teams 会议。
+https://teams.microsoft.com/l/meetup-join/19:d151cc671b134ea9be256dc7caaa2cbc@thread.tacv2/1688021256211?context=%7B%22Tid%22:%227cf932c0-bced-4490-b11f-48d23b1fe0d9%22,%22Oid%22:%22faeb82e3-995a-434a-8025-f8f9431ec25c%22%7D
+
+周会
+https://teams.microsoft.com/l/meetup-join/19%3a80b0614014d8423fae9de716da18e63f%40thread.tacv2/1675963408105?context=%7b%22Tid%22%3a%227cf932c0-bced-4490-b11f-48d23b1fe0d9%22%2c%22Oid%22%3a%22802115a8-094a-425b-93ae-768aa1fb09d8%22%7d
+
+
+git clone ssh://git@bitbucket-mtce.mobis.co.kr:7999/mvpu1_0/mtce_security_software.git && \
+cd mtce_security_software && \
+./install_all.sh
+
+
+
+
+
+3D viewer:
+1. fix switch slider, keypoint matching not align to frames.
+2. highligt keypoints of the current keyframe in 3D viewer
+3. mark orientations of the trajectory path and the orientation of the current localization frame
+
+https://10.37.38.241:3000/multi-viewer?datasetId=65bb5467a7279df578cf5914
+
+/home/xianghe/ma/2024/mtce_olymp/mtce_data_apis/recording_providers/mobis/recording.py
+: 171
+
+/opt/conda/envs/olymp/bin/python 
+ but just not good for debugging the problems with the visual performance, like rendering, loading, frontend computing performance.
+
+sensor_path
+PosixPath('/i/20_processed/AZEMB2/20220308/20220308_120939_AZEMB2/lidar_top/000803.pcd')
+self.recording.path
+PosixPath('/i/20_processed/AZEMB2/20220308/20220308_120939_AZEMB2')
+qualifier
+'lidar_top'
+frame_name
+'000803.pcd'
+
+/m/das_data/30_scene_selection/01_team_members/dominik/db_selection/20230911
+
+我生成了一些point cloud, 存在
+/m/das_data/80_inference_results/01_team_members/yuanyuan/UL3D/20230111/ul_3D_scene/dfm_restruct_gen_4_tune_masked_region_all_scales_corr_smoothness_fullres_no_sigmoid/results/point_clouds/
+
+放目录试试：
+/i/20_processed/AZEMB3/20211004/20211004_105541_AZEMB3
+
+1.
+vslam的点云是从mongodb拿的 （capnp？）
+
+2.
+vslamLoc和sliceLabels.vslam_map什么关系。
+
+3.
+sliceLabels.vslam_map.keyframes[0].keypoints （多）和sliceLabels.vslam_map.map_points （多） (或者sliceLabels.vslam_map.points_3d_world)什么关系。
+
+4.
+sliceLabels.vslam_map.keyframes[0].points_3d_world_idx: 是[]的，没有作用。
+
+"start": "tsc && vite --host 0.0.0.0 --port 3000",
+
+
+
+
+
+
+
+[12:10 PM] Dominik Dienlin
+fixing bugs:
+
+- not all matched keypoints from all cameras are shown in 3D (cubes with points inside them)
+
+features:
+
+- disable previous image visualization (or make optional)
+
+- remove toolbar in 3d mode
+
+- Would be nice to indicate the current KF position in the map -> coordinate frame for each keyframe of a camera (discuss with michael)
+
+- top-down orthographic projection (current is perspective projection)
+
+- limit visualized keypoints by number of observations (currently > 2)
+
+	-> have a setting in the vslam toolbar for mapPoints.filter((p) => (p.nKfObservations ?? 0) > 2);
+
+- Hovering on KP in the map would be nice to highlight in the images, and vice versa (not sure if possible)
+
+- "Maybe I misunderstand the visualization, but it seems not all KP matches are shown in the 3d map"
+
+   -> keypoints in image visualization are not all matched -> visualize which ones are matched and which ones are not
+
+yichen:
+
+- refactor placement of images in 3D viewer
+
+
+
+
+
+
+
+
+
+fixing bugs:
+- not all matched keypoints from all cameras are shown in 3D (cubes with points inside them)
+features:
+- disable previous image visualization (or make optional)
+- remove toolbar in 3d mode
+- Would be nice to indicate the current KF position in the map -> coordinate frame for each keyframe of a camera (discuss with michael)
+- top-down orthographic projection (current is perspective projection)
+- limit visualized keypoints by number of observations (currently > 2)
+	-> have a setting in the vslam toolbar for mapPoints.filter((p) => (p.nKfObservations ?? 0) > 2);
+- Hovering on KP in the map would be nice to highlight in the images, and vice versa (not sure if possible)
+- "Maybe I misunderstand the visualization, but it seems not all KP matches are shown in the 3d map"
+   -> keypoints in image visualization are not all matched -> visualize which ones are matched and which ones are not
+- jump to camera view in 3D (button in viewer toolbar)
+- disabling interaction of a viewer until it's in focus
+- Let the mp viewpoint follow a selected camera (as an configurable option).
+
+- (low priority) enable fps like keyboard-controls  (mouse wheel to move forward backward instead of zoom)
+ 
+   
+Xunbo / Dominik:
+ 
+- Marking points in 3D and projecting to 2D / projecting all current map (kf) points into the image
+- Make reverse image processing on points more efficient (e.g. via vectorizing code instead of using loops)
+- Allow to change image projection (e.g., rectified, cylindrical, rotation compensated, ...).
+- Need to clarify with Michael:
+	 - show the single mapping trajectory in world / vehicle coords, and the localization as well as the localization trajectory in world / vehicle coords instead of showing the camera trajectories (camera trajectories can be an additional option)
+	 -> Probably what would make sense:
+		- show keyframe trajectory (via map.keyframes[idx].pose -> translated into vehicle coordinates of the current frame) 
+yichen:
+- refactor placement of images in 3D viewer
+- disable double click / box interaction when in 3d mode
+From Michael:
+- Movable and scalable in the browser (a lot of the time, it is in the way of what I want to see in the map)
+
+sc stop PanGPS; sleep 2; sc start PanGPS
+ping -t 10.37.38.187
+
+[0.0006566122550610841, -0.00007538767868416106, 0.00009130696769980882]
+
+
+记录:
+        设置 // viewState={realViewState} 来自己管理跟踪viewState明显不如deck.gl自己管理的性能好。
+		默认情况下还是不要用viewState={realViewState}， 在onViewStateChange={(v) => {}}更新state。
+		而是只设置initialViewState={INITIAL_VIEW_STATE}，采用deck.gl自己管理viewState性能好。
+		
+		
+http://10.37.38.241:3000/multi-viewer?datasetId=65c499ce758c799706735474&viewers=camera_SVM_front%3B65c499ce758c799706735474&frame=1480&sliceId=65c49aa8b63e2c8a624cd35c
+
+
+
+http://localhost:3000/multi-viewer?datasetId=65c499ce758c799706735474&viewers=camera_SVM_front%3B65c499ce758c799706735474&frame=2220&sliceId=65c49aa8b63e2c8a624cd35c
+
+
+
+start from 29.04.2024
+	- top-down orthographic projection (current is perspective projection) https://deck.gl/docs/api-reference/core/orthographic-view
+	- limit visualized keypoints by number of observations (currently > 2)
+	  -> have a setting in the vslam toolbar for mapPoints.filter((p) => (p.nKfObservations ?? 0) > 2);
+ 
+    - Hovering on KP in the map would be nice to select KP in 3D and highlight in 2D
+	- use useState for initialFirstPersonViewState
+	 - rename first person view -> camera tracking
+	   -> when enabled set position and orientation to camera position and orientation
+	   -> when user rotates, translates the camera, store relative position and orientation to camera
+	   -> when camera moves (by moving the slider) the viewport camera moves accordingly (respecting the previous relative rotation and translation)
+	- enable fps wasd like keyboard-controls (mouse wheel to move forward backward instead of zoom)
+	 - r to reset to the camera view
+	 - remember offset from camera view (location, orientation)
+	 
+
+
+views={enableTopDownView? new OrthographicView({flipY: false,}): new OrbitView()}
+
+
+https://oraclev2dev.ddienlin.de/multi-viewer?recId=mtcatra_JW1_20240819_101800&viewers=camera_SVM_rear%3Bdefault&frame=20&sliceId=mtcatra_JW1_20240819_101800
+
+
+https://github.com/qianqianwang68/omnimotion
+
+
+[Yesterday 09:33] Dominik Dienlin
+- side by side view does not work at the moment 
+
+- set minimum to 1 (done)
+
+- it should be visible which point was selected in 3d, similar to selection from 2D (done, with tiny bugs: second viewer can not select kp in 3d)
+
+- json detail view should be disabled (log to console instead)(done)
+
+- replace the hand mouse with a normal mouse (at least during hover) (in progress)
+
+- make vslam panel more compact (done)
+
+- remove filter in 2D for keypoints / make configurable (done)
+
+- don't limit
+
+[Yesterday 09:46] Dominik Dienlin
+probably just don't limit the number of keypoints shown in 2D, which is the same as the point before
+
+
+fp view:
+bearing -180 to 180
+
+Research tracking moving points of the trailer.​ （propragate to the whole seq, not just 60 frames. make faster.）
+
+
+
+[04.06 14:59] Dominik Dienlin
+for frame in db.get_recording("mtcatra_JW1_20240819_101800").as_sequence():
+
+   ...:     print(frame.camera_SVM_rear.image)
+
+   ...:     break
+[04.06 14:59] Dominik Dienlin
+from mtce_data_apis import db
+
+
+python viz.py --config configs/default.txt --data_dir {sequence_directory} --foreground_mask_path {mask_file_path}
+python viz.py --config configs/default.txt --data_dir ../weights/swing/ --foreground_mask_path ../weights/swing/mask/00000.png  --ckpt_path ../weights/swing/model_100000.pth
+python viz.py --config configs/default.txt --data_dir ../weights/swing/  --ckpt_path ../weights/swing/model_100000.pth
+python viz.py --config configs/default.txt --data_dir ../weights/swing_tire/
+python viz.py --config configs/default.txt --data_dir ../weights/butterfly/
+
+
+python main_processing.py --data_dir ../../data/trailer1/ --chain
+python main_processing.py --data_dir ../../../data/trailer1/
+python main_processing.py --data_dir ../../../data/trailer2/ 
+python main_processing.py --data_dir ../../../data/trailer1-p02/
+
+conda 创建的venv的setuptools版本过高，装回低版本，就可以import torch了。
+pip install setuptools==45.2.0
+
+python train.py --config configs/default.txt --data_dir ../data/mnt/data/data_release/swing/
+python train.py --config configs/default.txt --data_dir ../data/trailer1/
+python viz_oracle.py --config configs/default.txt --data_dir ../data/trailer1/ --ckpt_path ./out/default_trailer1/model_020000.pth --foreground_mask_path ../data/trailer1/mask/00000.png
+python train.py --config configs/default.txt --data_dir ../data/trailer1-p02/ --num_iters 20000
+python viz.py --config configs/default.txt --data_dir ../data/trailer1-p02/ --ckpt_path ./out/default_trailer1-p02/model_020000.pth --pre_kp_path ./out/cache/trailer1_100000_kpts_forground.pkl
+python train.py --config configs/default.txt --data_dir ../data/trailer1-p03/ --num_iters 1000 --i_weight 1000
+python train.py --config configs/default.txt --data_dir ../data/trailer1-p03/ --num_iters 80000
+
+python train.py --config configs/default.txt --data_dir ../data/trailer2/ --num_iters 40000
+
+python train.py --config configs/default.txt --data_dir ../data/trailer3/ --num_iters 100000
+
+python train.py --config configs/default.txt --data_dir ../data/trailer_s1/ --num_iters 20000
+python train.py --config configs/default.txt --data_dir ../data/trailer_s1_mini/ --num_iters 200 --i_weight 100
+
+python viz.py --config configs/default.txt --data_dir ../data/trailer_s1_mini/ --ckpt_path ../data/trailer_s1_mini/model_000100.pth
+
+https://oraclev2dev.ddienlin.de/multi-viewer?recId=mtcatra_JW1_20240819_101800&viewers=camera_SVM_rear%3Bdefault&frame=20&sliceId=mtcatra_JW1_20240819_101800
+https://oraclev2dev.ddienlin.de/multi-viewer?recId=mtcatra_JW1_20230817_003039&viewers=camera_SVM_rear%3Bdefault&frame=60&sliceId=mtcatra_JW1_20230817_003039
+https://oraclev2dev.ddienlin.de/multi-viewer?recId=mtcatra_GN7_20240306_110000&viewers=camera_SVM_rear%3Bdefault&frame=370&sliceId=mtcatra_GN7_20240306_110000
+https://oraclev2dev.ddienlin.de/multi-viewer?recId=mtcatra_GN7_20240306_140000&viewers=camera_SVM_rear%3Bdefault&frame=6380&sliceId=mtcatra_GN7_20240306_140000
+
+300 - 360
+
+7500496
+http://localhost:3000/multi-viewer?datasetId=6634b06d7feb2b7d195a1593&viewers=camera_SVM_front%3B6634b06d7feb2b7d195a1593&frame=7&sliceId=66546fc7922411c5826eede3
+
+
+Hey Xianghe, I think for you planning wise everything should be clear, right? I have a few additional requests for 3D frontend, but we can also discuss this next week if you want. Until then you can continue with the omnimotion pipeline. Specifically:
+adding a frame skip option: e.g. running only on every 30th frame (not sure how well this will work, we'll need to experiment)
+propagating labels from one frame to all other frames in a sequence: Xunbo will provide some data (json files) with keypoint labels for traler detection. I'd like these to be propagated to all frames. The goal is to have an interface so that we can easily apply it to our data in the future
+other things that seem sensible to you. e.g. making the training faster somehow
+
+
+[14:25] Michal Szukala
+I am not sure what is inside sam_onnx_quantized_example.onnx, but my question is that file really necessary during the budling process?
+Should the build process be really dependable from the file located kind of randomly on the m drive (Like sometime in the future m drive path will change, or something and the whole building process is failing then)
+ 
+[14:26] Michal Szukala
+Or like in my case now, if I have no access to m drive, I can't build the application
+ 
+[14:29] Xianghe Ma
+yes, it's ok to disable the copy process, it's only requested for segment anything function.
+ 
+[14:34] Michal Szukala
+Why do we need this sam_onnx_quantized_example.onnx during the build process?  What is it doing?
+ 
+[14:35] Xianghe Ma
+it's the segment anything runtime model at the frontend, for the inference.
+ 
+[14:41] Michal Szukala
+so we use model in the frontend and as well in backhand?
+ 
+[14:44] Xianghe Ma
+yes, the backend part is for computing the feature embedding of img, frontend is to do inference phase with feature embedding + user prompts for segmentation.
+ 
+
+
+
+
+[Dienstag 14:09] Dominik Dienlin
+Hi Xianghe, here's a list of things from Raul:
+ 
+Wishlist for oracle
+Use (left and right) keyboard arrows to move between frames or keyframes in the sequence
+
+> I think we can add this feature not just for the 3d viewer but in general for the sequence viewer
+Compare maps (overlay them, paint them in different colors etc.): 
+
+> for this it should suffice to re-enable the datasets button for the viewer in the 3d mode
+Camera images should have the undistorted version as default
+
+> fix visualization for projection 3D-2D first (need to use the calibration from the labels)
+
+  > need to use the sequenceLabels.vslam_map.rectifiedCameraCalib for the projection (actually same for the undistortion of the image using [0].vslam_map.physicalCameraCalib.distortionCoefficients)
+Add a "Follow" view mode, in essence it is similar to "first person view" just that you can zoom out or in with the mouse wheel and change slightly the view in orbit, this new relative point is maintained for the other frames as well. Lets say I start in "first person view" but then I want something more like "3rd person view" like a video game, in ROS you can adjust your view as you want while still following something.
+
+> not sure if this is already done
+
+  > just the translation for orbit view mode
+Be able to configure the color of paths, frames, points etc. in the view and save them as your personal config (similar to how RVIZ saves a config of your default view)
+
+> I think a "color" dropdown for each viewer would make sense
+ 
+I also have a couple of things in mind:
+capture more of the current state in the URLParams (e.g. whether 3d mode is active, maybe the current position, orientation of the viewport, camera view mode i.e. e.g. first person mode, colors of the viewers)
+
+> when you copy the url of a 3d view and open it again, it should show the same 3d view including colors, etc
+help button to display keyboard shortcuts 
+
+> e.g.: wasd: movement in FP view, left right keys for navigation (not just for 3D viewer, Yichen will also know some shortcuts for SAM)
+
+For Omnimotion:
+ 
+I would like to have scripts training and for propagation keypoint labels (in our SequenceLabels format from the data-apis, ask Yichen for an example) from one frame to all others in lerna/experiments/omnimotion/. You don't need to push the code from the omnimotion repo itself, just a script to pull the code in the current location and then import whatever is necessary it from your script. Once that's done, create a PR and add Maurice, Yichen as reviewers. 
+Add a python script to schedule the training for a bunch of sequences on kubernetes, the code in lerna/experiments/lernaflow_example can be used as a reference for how to do this, feel free to ask Michal for help if necessary. 
+
+> probably best to use KubernetesRunner from lerna/flow/execution.py directly
+Maybe it also makes sense to include a script to do hyperparameter search for training? Not sure how sensitive the method is to the selection of hyperparameters
+ 
+What do you think? We can also have a meeting today to discuss the details
+ 
+ 
+ oracle/oracle2/frontend/src/storeon/viewer/actions/useQueryParamsActions.ts
+
+
+
+
+Papers：
+Segmentanything
+
+Tracking Everything Everywhere All at Once
+
+Don't Decay the Learning Rate, Increase the Batch Size
+
+
+Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour
+
+[1708.03888v3] Large Batch Training of Convolutional Networks (arxiv.org)
+https://arxiv.org/abs/1708.03888v3
+the problem with these papers is that they all experiment with imagenet. I haven't found a good example of successful large batch size (>256) training with semantic segmentation and in my experiments this often gave bad results
+
+Deep High-Resolution Representation Learning for Human Pose Estimation (CVPR 2019)
+https://github.com/leoxiaobin/deep-high-resolution-net.pytorch
+
+HRNet for pose estimation:
+https://github.com/leoxiaobin/deep-high-resolution-net.pytorch
+
+
+
+Sanober Rizwan
+Postal Address:   Am Ritzerfelder Hof 12 Herzogenrath, Nordrhein-westfalen 52134, Germany
+
+
+
+Xianghe Ma
+Postal Address: 01-05-1, A-Bau Humboldtstraße 21, Heidelberg 69120, Germany
+
+
+{ Implement real-time online image semantic segmentation based on Meta AI segment anything framework.
+{ Train the neural network for scene perception, estimating optical flow, scene flow, and dense and long-range
+motion from a video sequence.
+{ Develop 3D vSLAM scientific visualization tools. Render multi-sensor fusion point cloud of the Map, driving
+trajectory, driving trajectory of vSLAM localization, and sensors trajectory. Perform 2D to 3D key point
+matching, projection, and rendering.
+{ Optimize backend logic and frontend realtime rendering
+
+•	Supporting …
+•	Conducting …
+•	Analyzing …
+
+
+•	Developing real-time online image semantic segmentation tool based on Meta AI segment anything framework.
+
+
+
+Dear Ketevan,
+
+Thanks for your help.
+
+Below is a list of my tasks:
+•	Supporting the project of scientific visualization platform for autonomous driving, which is denoted as 'Oracle' platform
+•	Supporting the 2D and 3D visualization for object detection, free space detection, segmentation, key point matching, depth, optical flow, lidar point cloud, SLAM data
+•	Integrating Meta AI segment anything framework into 'Oracle' as a real-time online image semantic segmentation tool
+•	Training the neural network for scene perception, estimating optical flow, scene flow, the dense and long-range motion from a video sequence
+•	Optimizing backend logic and frontend real-time rendering of 'Oracle' platform to visualize autonomous driving data fast and efficiently
+
+Btw, to remind, I first started my internship at Hyundai last year on 15.05.2023 and continuously extended the internship this year.
+Just in case you need to check my first start date of me at Hyundai.
+
+Best regards
+Xianghe Ma
+
+
+
+http://localhost:3000/multi-viewer?datasetId=6634b06d7feb2b7d195a1593&viewers=camera_SVM_front%3B6634b06d7feb2b7d195a1593&frame=287&sliceId=66546fc7922411c5826eede3&is3DMode=true
+http://localhost:3000/multi-viewer?datasetId=6634b06d7feb2b7d195a1593&viewers=camera_SVM_front%3B6634b06d7feb2b7d195a1593%2Ccamera_SVM_rear%3B6634b06d7feb2b7d195a1593&frame=247&sliceId=66546fc7922411c5826eede3&is3DMode=true
+https://oraclev2.ddienlin.de/multi-viewer?datasetId=66b1db9e746d5ab635b43f2a&viewers=camera_SVM_front%3B66b1db9e746d5ab635b43f2a&frame=160&sliceId=66b1db9eae1b6d4b5eb43d10
+
+
+smyiche4@tu-dortmund.de YV9CH-HGR9G-M7NWZ-2CGQ7
+
+
+
+ls *.json | cut -c -37 | sort > sequences.txt
+
+
+Hi,I am Xianghe Ma. Currently, I am currently on an internship as a computer vision engineer at Hyundai, focusing on 3d vision and scene perception for autonomous driving.
+I have been working here at Hyundai for more than one year and really appreciate the time at Hyundai.
+I just find there is a position Sensor Fusion Algorithm Engineer from official career portal
+
+
+
+
+
+Below is a list of my tasks:
+•             Supporting the project of scientific visualization platform for autonomous driving, which is denoted as the 'Oracle' platform
+•             Supporting the 2D and 3D offline annotation and visualization for object detection, free space detection, segmentation, key point matching, depth, optical flow, lidar point cloud, SLAM data
+•             Integrating Meta AI segment anything framework into 'Oracle' as a real-time online image semantic segmentation tool
+•             Training the neural network for scene perception, estimating optical flow, scene flow, the dense and long-range motion from a video sequence
+•             Optimizing backend logic and frontend real-time rendering of 'Oracle' platform to visualize autonomous driving data fast and efficiently
+
+
+
+Polish my tasks list in company for reference letter, each sentence starts from like 'verb-ing' :"
+•             Supporting the project of scientific visualization platform for autonomous driving, which is denoted as the 'Oracle' platform
+•             Supporting the 2D and 3D visualization and offline annotation automatic generation for object detection, free space detection, segmentation, key point matching, depth, optical flow, lidar point cloud, SLAM data
+•             Integrating Meta AI segment anything framework into 'Oracle' as a real-time online image semantic segmentation tool
+•             Training the neural network for scene perception, estimating optical flow, scene flow, the dense and long-range motion from a video sequence
+•             Optimizing backend logic and frontend real-time rendering of 'Oracle' platform to visualize autonomous driving data fast and efficiently"
+
+
+Here’s a polished version of your tasks for a reference letter:
+
+•             Supporting the development of the 'Oracle' scientific visualization platform for autonomous driving.
+•             Facilitating 2D and 3D visualization and automating offline annotation generation for object detection, free space detection, segmentation, key point matching, depth estimation, optical flow, lidar point cloud, and SLAM data.
+•             Integrating the Meta AI Segment Anything framework into 'Oracle' for real-time online image semantic segmentation.
+•             Training neural networks for scene perception, including optical flow and scene flow estimation, as well as dense and long-range motion detection from video sequences.
+•             Optimizing backend logic and frontend real-time rendering for fast and efficient visualization of autonomous driving data within the 'Oracle' platform.
+
+
+Below is a updated list of my tasks:
+•             Supporting the development of the 'Oracle' scientific visualization platform for autonomous driving
+•             Facilitating 2D and 3D visualization and automating offline annotation generation for object detection, free space detection, segmentation, key point matching, depth estimation, optical flow, lidar point cloud, and SLAM data
+•             Integrating the Meta AI Segment Anything framework into 'Oracle' for real-time online image semantic segmentation.
+•             Training neural networks for scene perception, including optical flow and scene flow estimation, as well as dense and long-range motion detection from video sequences.
+•             Optimizing backend logic and frontend real-time rendering for fast and efficient visualization of autonomous driving data within the 'Oracle' platform.
+
+
+
+
+
+
+Dear Talent Acquisition Manager,
+
+Good morning!
+I am an intern at Hyundai started on 05.2023.
+I am writing to express my strong interest in the position of 'Sensor Fusion Algorithm Engineer' at Hyundai.
+This position aligns perfectly with my skills and interests, motivating me to apply. 
+
+At Hyundai, I am now a computer vision engineer focusing on 3D vision and scene perception for autonomous driving.
+My experience and expertise closely match the required and beneficial qualifications outlined in the job posting. 
+My supervisors are Dominik Dienlin and Dr. Michael Thon, they encourage me to find a long term position as well.
+I genuinely enjoy collaborating with the team and appreciate the time at Hyundai. 
+
+Feel free to find my updated CV attached which is more clear than previous.
+
+Best regards,
+Xianghe Ma
+
+
+
+Dear Hiring Manager,
+
+Good morning!
+I am an intern at Hyundai started from 05.2023.
+I am writing to express my strong interest in the position 'Sensor Fusion Algorithm Engineer' at Hyundai Mobis.
+This position aligns perfectly with my skills and interests, motivating me to apply. 
+I am now as a computer vision engineer focuses on 3D vision and scene perception for autonomous driving.
+My experience and expertise closely match the required and beneficial qualifications outlined in the job posting. 
+My supervisors are Dominik Dienlin and Dr. Michael Thon. I genuinely enjoy collaborating with the team and appreciate the time at Hyundai. 
+
+
+Feel free to find my updated CV attached which is more clear than previous.
+
+Best regards,
+Xianghe Ma
+
+
+
+跟自己的主管问别的组的岗位好嘛。。。。
+Hi, Dominik, good morning! Do we have collaborations with the sensor fusion team? I see their team has a position and align with my skills well. Not sure if I have the opportunity to try.
+
+
+
+算了，还是跟HR提吧。
+
+
+
+
+
+当出现多个viewer （camera）的时候，就会出现onclick， vslam map point和matching point的onclick识别冲突和不准确。
+select 3d project to 2d has problem.
+
+
+def _load_img_as_tensor(img_path, image_size):
+    img_pil = Image.open(img_path)
+    img_np = np.array(img_pil.convert("RGB").resize((image_size, image_size)))
+    if img_np.dtype == np.uint8:  # np.uint8 is expected for JPEG images
+        img_np = img_np / 255.0
+    else:
+        raise RuntimeError(f"Unknown image dtype: {img_np.dtype} on {img_path}")
+    img = torch.from_numpy(img_np).permute(2, 0, 1)
+    video_width, video_height = img_pil.size  # the original video size
+    return img, video_height, video_width
+	
+	
+	
+
+binary mask , not polygon, cause we need to adjust contour.
+interaction will be slow, cause put the frontend prompts to backend and wait mask ready.
+I think I can implement a first prototype of frontend sam2 propagation demo.
+Such as we define obj prompts first without seeing segmented mask immediately as it need to wait the backend inference.
+
+step 1:
+define multi obj prompts
+
+step 2:
+send prompts to backend and wait cur frame segment masks,
+
+step 3:
+check cur segmentation. 
+if not good, then go step 1, redefine prompts,
+if good, go step 4
+
+step 4
+propagate seg to key frames sequence.
+backend (cluster need to cache the propagate seg)
+
+
+combine sam1 model for real time frontend correction, after propagation	
+
+
+contour
+zoom in/ zoom out
+load data, load mp4 from video folder?
+
+
+
+PYTORCH_ENABLE_MPS_FALLBACK=1 \
+APP_ROOT="$(pwd)/../../../" \
+APP_URL=http://localhost:7263 \
+MODEL_SIZE=base_plus \
+DATA_PATH="$(pwd)/../../data" \
+DEFAULT_VIDEO_PATH=gallery/05_default_juggle.mp4 \
+gunicorn \
+    --worker-class gthread app:app \
+    --workers 1 \
+    --threads 2 \
+    --bind 0.0.0.0:7263 \
+    --timeout 60
+	
+	
+
+python backend/server/app.py
+
+
+yarn dev --port 7262
+
+cd demo/frontend && ./node_modules/.bin/vite build --mode development --sourcemap inline --minify false --force
+
+python demo/backend/server/app.py
+
+https://olymp-xianghe-gpu.dev-container.mtcekubernetes.eu/
+
+
+20241022_142134_AZEMB2.000084-000384
+20240305_133639_MTCEJW1.001046-001277
+  const [seqID, setSeqID] = useState('20240305_132351_MTCEJW1.003182-003183');
+
+20241022_142217_AZEMB2.000107-000407
+https://oraclev2dev.ddienlin.de/multi-viewer?datasetId=678e78b5fdb3864a4abca960&viewers=camera_SVM_front%3B678e78b5fdb3864a4abca960&frame=107&sliceId=678e78b5fdb3864a4abca964
+
+
+
+xiaohaima Video uploaded: {id: 'VmlkZW86dXBsb2Fkcy81Mjc4MjlhZjIwNzkwNTI3ZDk3MmI1Zj…5OTdiNmRhMzU3MDEyOWNiZWExNzRhNTgxMGU5N2VhLm1wNA==', height: 944, width: 1280, url: '/uploads/527829af20790527d972b5f14b7db5683997b6da3570129cbea174a5810e97ea.mp4', path: 'uploads/527829af20790527d972b5f14b7db5683997b6da3570129cbea174a5810e97ea.mp4', …}
+DemoVideoGallery.tsx:130 xiaohaima Video location.pathname: /
+
+
+
+xiaohaima Video onClick: {src: '/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4', path: 'videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4', poster: 'posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg', posterPath: 'posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg', url: '/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4', …}height: 944isUploadOption: falsepath: "videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4"poster: "posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg"posterPath: "posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg"posterUrl: "/posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg"src: "/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4"url: "/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4"width: 1280[[Prototype]]: Object
+DemoVideoGallery.tsx:118 xiaohaima Video onClick location.pathname: /
+
+
+{
+  src: '/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4',
+  path: 'videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4',
+  poster: 'posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg',
+  posterPath: 'posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg',
+  url: '/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4', 
+  …
+}
+  height: 944
+  isUploadOption: false
+  path: "videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4"
+  poster: "posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg"
+  posterPath: "posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg"
+  posterUrl: "/posters/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.jpg"
+  src: "/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4"
+  url: "/videos/20240305_132351_MTCEJW1.003182-003183-5.camera_SVM_front.mp4"
+  width: 1280[[Prototype]]: Object
+
+
+    {
+        src: video.node.url,
+        path: video.node.path,
+        poster: video.node.posterPath,
+        posterPath: video.node.posterPath,
+        url: video.node.url,
+        posterUrl: video.node.posterUrl,
+        width: video.node.width,
+        height: video.node.height,
+        isUploadOption: false,
+    }
+	
+	
+	
+prompts for loading prograss , get sequence error,
+clear cache data
+
+
+Hi Seogyeong, good afternoon, I met a problem with LOGA registration, maybe you could help me with this in your free time.
+
+mail: xianghe.ma@mobis.com
+ID: 7500628
+Birth date: 21/08/1994
+
+
+
+Log on ID> xma / Password> CCACCIGE
+MHX1233214@
+MHX1233214!
+
+otpauth://totp/LOGA3%3AXianghe%20Ma%20(XMA)%20?secret=GMYWIMZRHFSDOLJTG44WGLJUGUZWILLBGBTDGLJRGI3TQYLCGMZTOZJVMM
+
+
+
+
+部署sam2到kubernatters
+测试oracle upload json
+
+
+Dear HR,
+
+Thanks for your help.
+
+Kindly accept this letter as my formal resignation from my position as a staff member of Hyundai Mobis. 
+My last day is expected to be February 14, 2025.
+I am incredibly grateful for the opportunities I have been given in this position. 
+I value the insights I have learned and expect them to help me in my future endeavors.
+I would also like to thank my colleagues for being supportive of my professional growth. 
+
+I will help in making the transition of responsibilities as seamless as possible.
+
+Please find the signed resignation letter attached.
+
+Best wishes,
+Xianghe Ma
+
+
+
+
+Mobis Parts Europe N.V. – Zweigniederlassung DE Frankfurt Office
+
+
+Frankfurter Strasse 60-68, 65760 Eschborn, Germany
+
+
